@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Remote UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="remote">
+        <div class="center-row">
+            <button id="down" class="btn side-btn">▼</button>
+            <div class="screen">
+                <span id="temp" class="temp">24°</span>
+                <div class="fan-icon">
+                    <i id="fan-fa" class="fa-solid fa-fan"></i>
+                </div>
+                <div id="fan-speed" class="fan-speed"></div>
+            </div>
+            <button id="up" class="btn side-btn">▲</button>
+        </div>
+        <div class="bottom-buttons">
+            <button id="power" class="btn power">⏻</button>
+            <button id="fan" class="btn">Fan speed</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

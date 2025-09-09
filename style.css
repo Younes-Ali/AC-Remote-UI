@@ -1,0 +1,158 @@
+body {
+    background: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.remote {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 8px 100px rgba(0, 255, 255, 0.25);
+    width: clamp(280px, 80vw, 400px);
+    max-width: 98vw;
+    padding: clamp(16px, 5vw, 40px) clamp(12px, 4vw, 35px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    aspect-ratio: 1/2;
+}
+.center-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 3vw, 32px);
+    margin: clamp(12px, 6vw, 32px) 0;
+}
+.screen {
+    background: #222;
+    color: #0ff;
+    border-radius: 32px;
+    width: clamp(180px, 60vw, 260px);
+    max-width: 95vw;
+    height: clamp(120px, 40vw, 400px);
+    min-height: 80px;
+    aspect-ratio: 5/2;
+    font-size: clamp(2rem, 7vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.temp {
+    display: inline-block;
+    position: relative;
+}
+.buttons-side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.buttons-side:first-of-type {
+    left: -40px;
+}
+.buttons-side:last-of-type {
+    right: -40px;
+}
+.side-btn {
+    background: #222;
+    color: #0ff;
+    border: none;
+    border-radius: 50%;
+    padding: clamp(8px, 2vw, 18px) clamp(10px, 3vw, 22px);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.side-btn:active {
+    background: #333;
+}
+.bottom-buttons {
+    display: flex;
+    gap: clamp(8px, 4vw, 24px);
+    margin-top: clamp(12px, 6vw, 40px);
+}
+.btn.power {
+    background: #ff4d4d;
+    color: #fff;
+    padding: clamp(8px, 2vw, 16px) clamp(12px, 4vw, 24px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+.btn.power.on {
+    background: #4caf50;
+}
+.btn {
+    background: #222;
+    color: #0ff;
+    border: none;
+    padding: clamp(8px, 2vw, 16px) clamp(10px, 3vw, 24px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn:active {
+    background: #333;
+}
+.btn:not(.power):hover,
+.side-btn:hover {
+    background: #0ff;
+    color: #222;
+    box-shadow: 0 0 8px #0ff;
+}
+.fan-speed {
+    position: absolute;
+    bottom: clamp(6px, 2vw, 18px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #0ff;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.screen.active .fan-speed {
+    opacity: 1;
+}
+.fan-icon {
+    position: absolute;
+    top: clamp(6px, 2vw, 12px);
+    right: clamp(6px, 2vw, 18px);
+    width: clamp(28px, 8vw, 48px);
+    height: clamp(28px, 8vw, 48px);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fa-fan {
+    font-size: clamp(18px, 6vw, 44px);
+    color: #0ff;
+    transition: animation 0.3s;
+}
+.btn.power {
+    background: #ff4d4d;
+    color: #fff;
+    padding: clamp(8px, 2vw, 16px) clamp(12px, 4vw, 24px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+.btn.power.on {
+    background: #4caf50;
+}
+.btn:disabled,
+.side-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+@keyframes spinFan {
+    100% { transform: rotate(360deg); }
+}
